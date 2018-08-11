@@ -49,7 +49,7 @@
 <!--================================HEADER================================-->
   <header class="main-header">
     <!-- Logo -->
-    <a href="<?php echo site_url('backend/dashboard')?>" class="logo">
+    <a href="<?php echo site_url('backend/registrasi')?>" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>D</b>SB</span>
       <!-- logo for regular state and mobile devices -->
@@ -106,11 +106,8 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
         <li class="header" style="color:white">MENU UTAMA</li>
-        <li class=" <?php if($global->menu=='dashboard'){echo 'active';}?>"><a href="#"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>  
         <li class=" <?php if($global->menu=='registrasi'){echo 'active';}?>"><a href="<?php echo site_url($global->base_uri.'registrasi')?>"><i class="fa fa-tasks"></i> <span>Registrasi</span></a></li> 
-        <li class=" <?php if($global->menu=='laporan'){echo 'active';}?>"><a href="<?php echo site_url($global->base_uri.'laporan')?>"><i class="fa fa-file"></i> <span>Laporan</span></a></li> 
-        <li class=" <?php if($global->menu=='user'){echo 'active';}?>"><a href="#"><i class="fa fa-users"></i> <span>User</span></a></li>         
-
+        <li class=" <?php if($global->menu=='laporan'){echo 'active';}?>"><a href="<?php echo site_url($global->base_uri.'laporan')?>"><i class="fa fa-file"></i> <span>Laporan</span></a></li>         
       </ul>
     </section>
     <!-- /.sidebar -->
