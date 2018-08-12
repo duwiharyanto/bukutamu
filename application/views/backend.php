@@ -182,26 +182,28 @@
   $(document).ready(function(){  
     //JAVA SCRIPT AKSI  
     aksi();
+    tabel();       
+  })
+  function tabel(){
     //Data Tabel 
     $('#datatabel').DataTable({
       "paging": true,
       "ordering": true,
       "info": true,
       "autoWidth": false
-    });       
-     $('#laporan').DataTable({
-      // "paging": true,
-      // "ordering": true,
-      // "info": true,
-      // "autoWidth": false
+    });    
+    $('#laporan').DataTable({
       dom:'Bfrtip',
       buttons:['copyHtml5','excelHtml5','csvHtml5','pdfHtml5','print']
     });        
     $('#laporan_filter').addClass('pull-left'); 
     $('.dt-buttons').addClass('pull-right');    
-    $('.dt-button').addClass('btn btn-flat btn-primary');      
-    $('.dt-button').css('margin','5px');       
-  })
+    $('.dt-button').addClass('btn btn-sm btn-flat btn-primary');      
+    $('.dt-button').css('margin','3px');      
+    $('.buttons-copy ').click(function(){
+      alert('Copy Berhasil');
+    });    
+  }
   //KUMPULAN FUNGSI AKSI
   function aksi(){
     $('.detail').click(function(){

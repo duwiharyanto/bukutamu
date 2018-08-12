@@ -18,29 +18,6 @@
 			}
 			$this->load->view('login');
 		}
-		function daftar(){
-			$this->load->view('daftar');
-		}
-		function prosesdaftar(){
-			$data=array(
-				'user_username'=>$this->input->post('user_username'),
-				'user_password'=>md5($this->input->post('user_password')),
-				'user_levelid'=>2,
-				'user_email'=>$this->input->post('user_email'),
-				'user_terdaftar'=>date('Y-m-d')
-			);
-			$query=array(
-				'tabel'=>'user',
-				'data'=>$data,
-			);
-			$insert=$this->Crud->insert($query);
-			if($insert){
-				$this->session->set_flashdata('success','Pendaftaran berhasil');
-			}else{
-				$this->session->set_flashdata('error','Pendaftaran gagal');
-			}			
-			redirect(site_url());
-		}
 		function aksi_login(){
 			$username=$this->input->post('username');
 			$password=md5($this->input->post('password'));
@@ -63,9 +40,7 @@
 						);
 				$this->session->set_userdata($dt_session);				
 				if($this->session->userdata('level')==1){
-				  redirect(site_url("backend/dashboard"));
-				}else{
-				  redirect(site_url("user/dashboard"));	
+				  redirect(site_url("backend/registrasi"));
 				}
 			}else{
 				$this->session->set_flashdata('error','username tidak ditemukan');
